@@ -22,8 +22,8 @@ jobs:
           git fetch origin 
           git checkout master
           git stash
-          git pull origin master 
-          git merge test-pramod 
+          git pull origin master --allow-unrelated-histories
+          git merge test-pramod  --allow-unrelated-histories
           git stash pop || echo "No stashed changes to apply"
           git push origin master
 
