@@ -23,6 +23,7 @@ jobs:
           git checkout master
           git stash
           git pull origin master 
-          git merge test-pramod --allow-unrelated-histories
-          git stash pop
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/pramod8959/testing_data.git master
+          git merge test-pramod 
+          git stash pop || echo "No stashed changes to apply"
+          git push origin master
+
