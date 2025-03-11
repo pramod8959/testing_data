@@ -23,4 +23,4 @@ jobs:
           git checkout master
           git pull origin master
           git merge --no-ff test-pramod -m "Automated merge of test-pramod into master"
-          git push origin master 
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/pramod8959/testing_data.git main
