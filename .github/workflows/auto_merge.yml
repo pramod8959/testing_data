@@ -19,7 +19,6 @@ jobs:
 
       - name: Merge test-pramod into master
         run: |
-          git fetch origin
           git checkout master
           git stash
           git pull origin master 
