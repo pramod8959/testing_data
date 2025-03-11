@@ -19,11 +19,8 @@ jobs:
 
       - name: Merge test-pramod into master
         run: |
-          git fetch origin 
           git checkout master
-          git stash
-          git pull origin master --allow-unrelated-histories
-          git merge test-pramod  --allow-unrelated-histories
-          git stash pop || echo "No stashed changes to apply"
+          git pull origin master
+          git merge test-pramod
           git push origin master
 
