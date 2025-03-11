@@ -1,0 +1,26 @@
+name: Auto Merge PR to Main
+
+on:
+  push:
+    branches:
+      - test-pramod  # This runs the workflow when the 'test-pramod' branch is updated
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Git
+        run: |
+          git config --global user.name "pramod8959"
+          git config --global user.email "pramoddewangan128@gmail.com"
+
+      - name: Merge test-pramod into main
+        run: |
+          git fetch origin
+          git checkout main
+          git pull origin main
+          git merge --no-ff test-pramod -m "Automated merge of test-pramod into main"
+          git push origin main
