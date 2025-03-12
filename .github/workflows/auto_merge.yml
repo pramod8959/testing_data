@@ -20,7 +20,7 @@ jobs:
           git config --global user.email "pramoddewangan128@gmail.com"
       - name: Merge test-pramod into master
         run: |
-          git fetch origin
+          git fetch --unshallow 
           git checkout master
           git stash -u
           git pull origin master 
