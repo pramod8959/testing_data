@@ -21,7 +21,7 @@ jobs:
         run: |
           git fetch origin
           git checkout master
-          git pull origin master
-          git merge test-pramod
+          git pull origin master --allow-unrelated-histories
+          git merge --allow-unrelated-histories test-pramod
           git push origin master
 
