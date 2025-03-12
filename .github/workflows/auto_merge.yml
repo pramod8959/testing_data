@@ -22,6 +22,8 @@ jobs:
         run: |
           git fetch origin
           git checkout master
-          git reset --hard origin/master
+          git stash -u
+          git pull origin master 
           git merge test-pramod --allow-unrelated-histories --no-ff
+          git stash pop
           git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/pramod8959/testing_data.git master
