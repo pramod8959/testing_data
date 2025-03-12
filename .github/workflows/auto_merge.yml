@@ -21,7 +21,8 @@ jobs:
 
       - name: Merge test-pramod into master
         run: |
-          git checkout master || git checkout -b master origin/master
+          git fetch origin
+          git checkout master
           git pull origin master
           git merge test-pramod --no-edit
           git push origin master
